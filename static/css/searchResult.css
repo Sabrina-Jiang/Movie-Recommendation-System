@@ -1,0 +1,106 @@
+.movie-slot {
+    overflow: hidden;
+
+    margin: 20px 0;
+}
+
+.movie-slot > .item {
+    display: flex;
+    overflow: hidden;
+    justify-content: space-between;
+
+    width: 95%;
+    margin: 20px auto;
+
+    border-radius: 20px;
+    background-color: #FFFFFF;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+
+}
+
+.movie-slot > .item > img {
+    float: left;
+
+    height: 250px;
+
+    cursor: pointer;
+}
+
+.movie-slot > .item > .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    box-sizing: border-box;
+    width: calc(100% - 200px);
+    height: 250px;
+    padding: 20px;
+}
+
+.movie-slot > .item > .content > .row {
+    display: flex;
+
+    width: 100%;
+    margin: 0 0 20px 0;
+}
+
+.movie-slot > .item > .content > .row:nth-last-child(1) {
+    margin: 0;
+}
+
+.movie-slot > .item > .content > .row > .title {
+    width: 90%;
+
+    cursor: pointer;
+
+    color: #992d28;
+
+    font-family: Encode Sans Condensed, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.movie-slot > .item > .content > .row > .rating {
+    width: 10%;
+
+    text-align: center;
+
+    color: #992d28;
+
+    font-family: Encode Sans Condensed, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.movie-slot > .item > .content > .row > .years {
+    width: 30%;
+
+    color: #992d28;
+
+    font-family: Encode Sans Condensed, sans-serif;
+    font-size: 20px;
+}
+
+.movie-slot > .item > .content > .row > .genres {
+    float: right;
+
+    width: 70%;
+
+    color: #992d28;
+
+    font-family: Encode Sans Condensed, sans-serif;
+    font-size: 20px;
+}
+
+.description > div {
+    display: flex;
+}
+
+.description > .summary_text {
+    display: block;
+}
+
+.description > div > * {
+    margin: 0;
+}

@@ -1,0 +1,115 @@
+.float-list {
+    position: absolute;
+    z-index: 999;
+    top: 93px;
+    right: 5vw;
+
+    overflow: hidden;
+
+    width: 30vw;
+    height: 30vh;
+
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.float-container {
+    overflow: scroll;
+
+    box-sizing: border-box;
+    width: 100%;
+    height: calc(100% - 40px);
+    padding: 5% 0;
+}
+
+.float-actions {
+    display: flex;
+
+    width: 100%;
+    height: 40px;
+}
+
+.float-actions > .action {
+    display: flex;
+    justify-content: center;
+
+    width: 50%;
+
+    cursor: pointer;
+}
+
+.float-actions > .action > div {
+    margin: 0;
+
+    color: #982b28;
+
+    font-family: 'Helvetica Neue', sans-serif;
+    line-height: 40px;
+}
+
+.float-actions > .action > img {
+    display: block;
+
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+}
+
+.float-item {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+}
+
+.float-item > .item-img {
+    width: 20%;
+    margin: 2% 5%;
+}
+
+.float-item > .item-img > a > img {
+    width: 100%;
+}
+
+.float-item > .intro {
+    width: 60%;
+}
+
+.float-item > .intro > .item-title {
+    color: #982b28;
+
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+.float-item > .intro > .item-summary {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+
+    margin-top: 10px;
+
+    text-overflow: ellipsis;
+    word-break: break-all;
+
+    font-family: 'Helvetica Neue', sans-serif;
+
+    -webkit-line-clamp: 3;
+}
+
+a {
+    text-underline: none;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #982b28;
+}
+
+.nothing {
+    width: 100%;
+    font-family: 'Helvetica Neue', sans-serif;
+    text-align: center;
+    color: #737373;
+    margin-top: 20%;
+}

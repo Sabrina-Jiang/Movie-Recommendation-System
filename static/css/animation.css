@@ -1,0 +1,45 @@
+.animation {
+    transition: all linear 300ms;
+}
+
+.disappear {
+    opacity: 0;
+}
+
+.no-height {
+    display: none;
+
+    height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.search-animation-title {
+    margin: 0;
+
+    transform: translate3d(-35%, 0, 0);
+
+    font-size: 40px;
+}
+
+.search-animation-header {
+    background-color: #FFFFFF;
+}
+
+.search-animation-panel {
+    color: #FFFFFF;
+    background-color: #636363;
+}
+
+.search-animation-panel > .filters > .genres > div:first-child {
+    color: #FFFFFF;
+}
+
+.search-animation-panel > .search-box > .search-button {
+    color: #FFFFFF;
+    background-color: #982b28;
+}
+
+.search-animation-panel > .search-box > .search-input {
+    background-color: #dddddd;
+}

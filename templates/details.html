@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ data.movie_name }} - MoiveLens</title>
+    <link rel='stylesheet' type='text/css' href="https://fonts.googleapis.com/css?family=Encode+Sans+Condensed">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/normalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/details.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/animation.css">
+    <link rel="stylesheet" href="/css/recommends.css">
+    <link rel="stylesheet" href="/css/float.css">
+</head>
+<body>
+
+<div class="float-list animation no-height disappear">
+    <div class="float-container">
+    </div>
+    <div class="float-actions">
+        <div class="action clear animation">
+            <img src="/img/trash.svg" alt="">
+            <div>Clear</div>
+        </div>
+        <div class="action close animation">
+            <img src="/img/close.svg" alt="">
+            <div>Close</div>
+        </div>
+    </div>
+</div>
+
+<div class="header action-header">
+    <div class="title">MoiveLens</div>
+    <div class="action-button sign-in no-height">Sign in</div>
+    <div class="action-button register no-height">Register</div>
+    <div class="user-name login-state animation no-height"></div>
+    <div class="user-icon login-state animation no-height">
+        <img src="/img/user.svg" alt="">
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="title main-title">
+            {{ data.movie_name }}
+            <i><img class="no-star star-button" src="/img/no-star.svg" alt=""></i>
+            <i><img class="star star-button" style="display: none" src="/img/star.svg" alt=""></i>
+        </div>
+        <div class="title rate">{{ data.movie_rating }}</div>
+    </div>
+    <div class="row">
+        <div class="sub-title">{{ data.movie_genres }}</div>
+    </div>
+    <div class="row description">
+        <div class="image">
+            <img src="{{ data.poster }}" alt="">
+        </div>
+        <div class="des">{{ data.summary_text|safe }}</div>
+    </div>
+    <div class="row">
+        <div class="sub-title">
+            You May Also Like
+        </div>
+    </div>
+    <div class="row intro">
+        <div class="intro-left">
+            {% for item in data.rec_info %}
+            <div class="wrapper">
+                <img class="intro-thumb" data-index="{{ loop.index }}" src="/getMovieCover?id={{ item[0] }}" alt="">
+            </div>
+            {% endfor %}
+        </div>
+        <div class="intro-right">
+            {% for item in data.rec_info %}
+            <div class="des-column" data-index="{{ loop.index }}" style="display: none">
+                <div class="big-poster">
+                    <img src="/getMovieCover?id={{ item[0] }}" alt="">
+                </div>
+                <div class="intro">
+                    <div class="title">{{ item[1].title }}</div>
+                    <div class="des">{{ item[1].des }}</div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="left">
+        <p>Database comes from Movielens-latest 2016.08</p>
+        <p>Developed by Team 1, all right reserved</p>
+        <p>Chenjie Jiang, Chen Liang, Yu liu, Sushma Tayanna</p>
+    </div>
+    <div class="right">
+        <div class="row">
+            <p>Chenjie Jiang</p>
+            <p>Chen Liang</p>
+            <p>Yu Liu</p>
+            <p>Sushma Tayanna</p>
+        </div>
+        <div class="row">
+            <p>cjiang3@wpi.edu</p>
+            <p>cliang@wpi.edu</p>
+            <p>yliu25@wpi.edu</p>
+            <p>stayanna@wpi.edu</p>
+        </div>
+        <div class="row">
+            <p>Front-end Design</p>
+            <p>UI Design & Reports</p>
+            <p>Backend Design</p>
+            <p>Database Design</p>
+        </div>
+    </div>
+</div>
+</body>
+<script src="/js/lib/jquery.min.js"></script>
+<script src="/js/lib/jquery.cookie.min.js"></script>
+<script src="/js/lib/sweetalert2.all.min.js"></script>
+<script src="/js/lib/store.modern.min.js"></script>
+<script src="/js/base.js"></script>
+<script src="/js/login.js"></script>
+<script src="/js/star.js"></script>
+<script src="/js/float.js"></script>
+<script>
+  $('.des-column[data-index=1]').css({'display': 'flex'})
+  $('.intro-thumb').on('click', (e) => {
+    $('.des-column').css({'display': 'none'})
+    target = $(e.target).attr('data-index')
+    $(`.des-column[data-index=${target}]`).css({'display': 'flex'})
+  })
+</script>
+</html>
